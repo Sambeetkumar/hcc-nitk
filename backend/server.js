@@ -8,6 +8,7 @@ const userRouter = require('./routes/userRoute');
 require('dotenv').config();
 //app config
 const app = express();
+app.set('strict routing', true);
 const PORT = process.env.PORT || 4000;
 dbConnect();
 connectCloudinary();
