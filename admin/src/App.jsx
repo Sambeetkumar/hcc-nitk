@@ -9,9 +9,9 @@ import Dashboard from "./pages/admin/Dashboard";
 import AddDoctor from "./pages/admin/AddDoctor";
 import AllAppointments from "./pages/admin/AllAppointments";
 import DoctorsList from "./pages/admin/DoctorsList";
-import DocAppointments from "./pages/doctor/docAppointments";
-import DocDashboard from "./pages/doctor/docDashboard";
-import DocProfile from "./pages/doctor/docProfile";
+import DocAppointments from "./pages/doctor/DocAppointments";
+import DocDashboard from "./pages/doctor/DocDashboard";
+import DocProfile from "./pages/doctor/DocProfile";
 function App() {
   const { aToken } = useContext(AdminContext);
   const { dToken } = useContext(DoctorContext);
