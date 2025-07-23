@@ -14,13 +14,11 @@ connectCloudinary();
 //middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
 app.use(cors({
-  origin: '*', // Or specify frontend domain like 'https://hcc-nitk-qz4f.vercel.app'
+  origin: '*',
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type','Authorization'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
 }));
-app.options('*', cors()); // handle preflight
 
 //api endpoint
 app.use('/api/admin', adminRouter);
@@ -31,7 +29,7 @@ app.use('/api/user', userRouter);
 app.get('/', (req, res) =>{
     res.send("api working fine")
 })
-// start express app
+//start express app
 app.listen(PORT, () => {
     console.log(`server running on port ${PORT}`);
 })
