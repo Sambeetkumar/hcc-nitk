@@ -18,7 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors({
   origin: '*',
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
+  allowedHeaders: ['Content-Type', 'Authorization','token','atoken','dtoken'],
 }));
 //api endpoint
 app.use('/api/admin', adminRouter);
