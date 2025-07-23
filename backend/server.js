@@ -8,7 +8,6 @@ const userRouter = require('./routes/userRoute');
 require('dotenv').config();
 //app config
 const app = express();
-app.set('strict routing', true); // ✅ critical
 const PORT = process.env.PORT || 4000;
 dbConnect();
 connectCloudinary();
@@ -32,8 +31,7 @@ app.use('/api/user', userRouter);
 app.get('/', (req, res) =>{
     res.send("api working fine")
 })
-//start express app
-// app.listen(PORT, () => {
-//     console.log(`server running on port ${PORT}`);
-// })
-module.exports = app;
+// start express app
+app.listen(PORT, () => {
+    console.log(`server running on port ${PORT}`);
+})
