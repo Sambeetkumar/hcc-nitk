@@ -20,7 +20,6 @@ app.use(cors({
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
 }));
-app.options('*', cors()); // Preflight support
 //api endpoint
 app.use('/api/admin', adminRouter);
 //doctor endpoint
