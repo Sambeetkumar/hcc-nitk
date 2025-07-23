@@ -14,6 +14,8 @@ connectCloudinary();
 //middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+// ✅ Fix redirect issue by enabling strict routing
+app.set('strict routing', true);  // <-- KEY FIX
 app.use(cors({
   origin: '*', // Or specify frontend domain like 'https://hcc-nitk-qz4f.vercel.app'
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
