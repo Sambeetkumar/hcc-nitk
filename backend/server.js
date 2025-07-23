@@ -14,26 +14,12 @@ connectCloudinary();
 //middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-const allowedOrigins = [
-    'https://hcc-nitk-js2d.vercel.app/',
-   'https://hcc-nitk-qz4f.vercel.app/',
-  'http://localhost:5174',// for local development
-  'http://localhost:5173' // for local development
-];
 app.use(cors({
-  origin: function (origin, callback) {
-    // allow requests with no origin (like mobile apps or curl requests)
-    if (!origin) return callback(null, true);
-    if (allowedOrigins.indexOf(origin) === -1) {
-      const message = 'The CORS policy for this site does not allow access from the specified Origin.';
-      return callback(new Error(message), false);
-    }
-    return callback(null, true);
-  },
-  credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
+  origin: '*', // Or specify frontend domain like 'https://hcc-nitk-qz4f.vercel.app'
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type'],
 }));
+app.set('strict routing', true);
 
 //api endpoint
 app.use('/api/admin', adminRouter);
