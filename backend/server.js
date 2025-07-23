@@ -17,9 +17,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors({
   origin: '*', // Or specify frontend domain like 'https://hcc-nitk-qz4f.vercel.app'
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type'],
+  allowedHeaders: ['Content-Type','Authorization'],
 }));
-app.set('strict routing', true);
+app.options('*', cors()); // handle preflight
 
 //api endpoint
 app.use('/api/admin', adminRouter);
