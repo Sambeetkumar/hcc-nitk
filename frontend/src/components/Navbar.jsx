@@ -42,6 +42,7 @@ function Navbar() {
           <li className="py-1">CONTACT</li>
           <hr className="border-none outline-none h-0.5 bg-primary w-3/5 m-auto hidden" />
         </NavLink>
+        <li className="border px-2.5 py-0.5 rounded-full border-gray-500 text-gray-600"><a href="https://hcc-nitk-js2d.vercel.app/" target="blank">Admin</a></li>
       </ul>
       <div className="flex items-center gap-4">
         {token && userData ? (
@@ -123,6 +124,7 @@ function Navbar() {
             <NavLink onClick={() => setShowMenu(false)} to="/contact">
               <p className="px-4 py-2 rounded inline-block">CONTACT</p>
             </NavLink>
+            <p className="border px-2.5 py-0.5 rounded-full border-gray-500 text-gray-600"><a href="https://hcc-nitk-js2d.vercel.app/" target="blank">Admin</a></p>
           </ul>
         </div>
       </div>
